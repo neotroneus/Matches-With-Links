@@ -1,0 +1,33 @@
+{% extends 'ronaldo/base.html' %}
+
+{% block body %}
+    <div class="col-sm-12 col-lg-12">
+    <center><h1 style="color: black">All matches live now</h1></center>
+    <hr>
+        <div class="row">
+        <div class="col-md-4"><p style="color: black">Links will be active 30 minutes from Game Time</p></div>
+    <div class="col-md-4 offset-md-4"><p style="color: black">Links will be active 30 minutes from Game Time</p></div>
+</div>
+    </div>
+    <br>
+       <div class="match-container container-fluid">
+        <div class="row">
+            {% for match in object_list %}
+                <div class="col-sm-4 col-lg-4">
+                    <div class="card" >
+                        <img class="card-img-top" src="{{ match.match_logo.url }}" alt="Card image cap">
+                        <div class="card-body" style="background-color: #171a1d">
+                            <h3 class="card-title" style="color: white">{{ match.match_description }}</h3>
+                            <p class="card-text" style="color: white">{{ match.match_details }}<p></p></p>
+                            <a href="{{ match.id }}" class="btn btn-success">Get links</a>
+                        </div>
+                    </div>
+                <p></p>
+                <hr>
+                </div>
+                <p></p>
+            {% endfor %}
+        </div>
+    </div>
+<div class="col-sm-12"style="background-color: black"><p></p></div>
+{% endblock %}
